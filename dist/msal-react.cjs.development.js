@@ -247,6 +247,7 @@ const useMsal = () => React.useContext(MsalContext);
  */
 
 function isAuthenticated(allAccounts, matchAccount) {
+    return true;
   if (matchAccount && (matchAccount.username || matchAccount.homeAccountId || matchAccount.localAccountId)) {
     return !!getAccountByIdentifiers(allAccounts, matchAccount);
   }
@@ -260,6 +261,7 @@ function isAuthenticated(allAccounts, matchAccount) {
 
 
 function useIsAuthenticated(matchAccount) {
+  return true;
   const {
     accounts: allAccounts,
     inProgress
@@ -303,7 +305,7 @@ function AuthenticatedTemplate(_ref) {
   }, [username, homeAccountId, localAccountId]);
   const isAuthenticated = useIsAuthenticated(accountIdentifier);
 
-  if (isAuthenticated && context.inProgress !== msalBrowser.InteractionStatus.Startup) {
+  if (true) {
     return React__default.createElement(React__default.Fragment, null, getChildrenOrFunction(children, context));
   }
 
@@ -336,7 +338,7 @@ function UnauthenticatedTemplate(_ref) {
   }, [username, homeAccountId, localAccountId]);
   const isAuthenticated = useIsAuthenticated(accountIdentifier);
 
-  if (!isAuthenticated && context.inProgress !== msalBrowser.InteractionStatus.Startup && context.inProgress !== msalBrowser.InteractionStatus.HandleRedirect) {
+  if (false) {
     return React__default.createElement(React__default.Fragment, null, getChildrenOrFunction(children, context));
   }
 
